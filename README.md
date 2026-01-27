@@ -1,25 +1,25 @@
-# Smart Project Management App with AI-Assisted Development in Oracle APEX
+# Starter Online Shopping App with Oracle APEX
 
 ## Overview
-This project is based on the Oracle LiveLabs workshop where I built a dynamic project management app using Oracle APEX AI Assistant. The app demonstrates how AI can accelerate low-code development.
+This project is based on the Oracle LiveLabs workshop where I built a shopping cart application using Oracle APEX. The app demonstrates how low-code development can quickly deliver a functional e-commerce solution.
 
 ## Features
-- Installed sample project management dataset
-- Generated initial app with APEX AI Assistant
-- Customized UI with pre-built components
-- Enhanced app with SQL queries using APEX Assistant
-- Implemented AI chat assistant with Dynamic Actions and Chat Widget
+- Admin pages to manage products, customers, and stores
+- Customer pages to browse products and add to cart
+- Checkout workflow for placing orders
+- Interactive reports and forms built with APEX low-code features
 
 ## How to Run
-1. Import the provided SQL scripts into your Oracle Autonomous Database.
-2. Import the APEX app export file into your APEX workspace.
-3. Run the app to explore project management features and AI chat assistant.
+1. Import the SQL scripts into Oracle APEX SQL Workshop.
+2. Import the APEX app export file into your workspace.
+3. Run the app to explore admin and customer features.
 
 ## Screenshots
-![Dashboard Screenshot](docs/dashboard.png)
-![Chat Assistant Screenshot](docs/chat.png)
+![Admin Dashboard](docs/admin-dashboard.png)
+![Shopping Cart](docs/shopping-cart.png)
+![Checkout Page](docs/checkout.png)
 
 ## Learnings
-- How AI Assistant simplifies query construction
-- How low-code customization accelerates app development
-- How to integrate AI chat into APEX applications
+- How to design a shopping cart schema
+- How to use APEX wizards to generate apps
+- How to customize pages with low-code components
