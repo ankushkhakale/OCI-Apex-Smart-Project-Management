@@ -1,4 +1,4 @@
-# 🎉 Event Management Portal (Oracle APEX)
+# Event Management Portal (Oracle APEX)
 
 [![Made with Oracle APEX](https://img.shields.io/badge/Made%20with-Oracle%20APEX-orange?style=for-the-badge&logo=oracle)](https://apex.oracle.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
@@ -86,7 +86,6 @@ To run this project in your own Oracle APEX workspace:
 3.  **Apply Styling**:
     *   Upload the files in `static/` to **Shared Components**.
     *   Link them in the **User Interface Attributes**.
-    *   *(See [docs/STYLING_GUIDE.md](docs/STYLING_GUIDE.md) for full details)*.
 
 ---
 
