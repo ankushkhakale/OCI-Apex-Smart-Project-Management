@@ -1,120 +1,179 @@
 /* 
    Event Management Portal - Modern/Tech Theme 
    Author: Custom AI Assistant
+   Version: 2.0 (Fixes Contrast & Visibility)
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@700&display=swap');
 
 :root {
     --bg-color: #0d1117;
-    --card-bg: rgba(22, 27, 34, 0.7);
+    --card-bg: rgba(22, 27, 34, 0.85);
+    /* Slightly more opaque for readability */
     --glass-border: rgba(255, 255, 255, 0.1);
     --primary-glow: #58a6ff;
-    --secondary-glow: #bc8cff;
     --text-main: #c9d1d9;
     --text-bright: #ffffff;
     --accent: #2f81f7;
 }
 
-body {
+/* =========================================
+   1. GLOBAL RESETS (Crucial for Light Theme Override)
+   ========================================= */
+body,
+.t-Body,
+.t-PageBody {
     background-color: var(--bg-color) !important;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(88, 166, 255, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(188, 140, 255, 0.1) 0%, transparent 40%) !important;
+    background-attachment: fixed;
     color: var(--text-main) !important;
     font-family: 'Inter', sans-serif !important;
-    background-image: 
-        radial-gradient(circle at 10% 20%, rgba(88, 166, 255, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(188, 140, 255, 0.1) 0%, transparent 40%);
-    background-attachment: fixed;
 }
 
-/* Typography Headers */
-h1, h2, h3, h4, .t-HeroDisplay-title, .t-Region-title {
+/* Force transparency on main content wrappers so body background shows */
+.t-Body-content,
+.t-Body-main,
+.t-Footer,
+.apex-side-nav,
+.t-Body-side {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* =========================================
+   2. TYPOGRAPHY
+   ========================================= */
+h1,
+h2,
+h3,
+h4,
+.t-HeroDisplay-title,
+.t-Region-title {
     font-family: 'Outfit', sans-serif !important;
     color: var(--text-bright) !important;
-    letter-spacing: -0.5px;
     text-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
 }
 
-/* Glassmorphism Cards/Regions */
-.t-Region, .t-Card {
+/* =========================================
+   3. REGIONS & CARDS
+   ========================================= */
+.t-Region,
+.t-Card,
+.t-Region-body {
     background: var(--card-bg) !important;
     backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
     border: 1px solid var(--glass-border) !important;
     border-radius: 16px !important;
+    color: var(--text-main) !important;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37) !important;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.t-Region:hover, .t-Card:hover {
-    transform: translateY(-5px);
+/* Ensure the inside of regions doesn't get white background */
+.t-Region-bodyWrap,
+.t-Region-body {
+    background: transparent !important;
+}
+
+.t-Region:hover,
+.t-Card:hover {
     box-shadow: 0 12px 40px 0 rgba(88, 166, 255, 0.15) !important;
     border-color: rgba(88, 166, 255, 0.3) !important;
 }
 
-/* Buttons */
+/* =========================================
+   4. DATA TABLES / INTERACTIVE REPORTS
+   ========================================= */
+/* The container */
+.a-IRR,
+.a-IRR-region {
+    background: transparent !important;
+    color: var(--text-main) !important;
+}
+
+/* Headers */
+.a-IRR-header {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-bottom: 1px solid var(--glass-border) !important;
+    color: var(--text-bright) !important;
+}
+
+.a-IRR-headerLink {
+    color: var(--text-bright) !important;
+}
+
+/* Rows */
+.a-IRR-table {
+    background: transparent !important;
+    border-collapse: collapse;
+}
+
+.a-IRR-table tr td {
+    background-color: transparent !important;
+    /* Fixes white background */
+    color: var(--text-main) !important;
+    /* Fixes readability */
+    border-bottom: 1px solid var(--glass-border) !important;
+}
+
+/* Stripes override */
+.a-IRR-table tr:nth-child(even) td,
+.a-IRR-table tr:nth-child(odd) td {
+    background-color: transparent !important;
+}
+
+/* Hover effect */
+.a-IRR-table tr:hover td {
+    background-color: rgba(47, 129, 247, 0.1) !important;
+    color: white !important;
+}
+
+/* Search bar area */
+.a-IRR-toolbar {
+    background: transparent !important;
+    border-color: var(--glass-border) !important;
+}
+
+/* =========================================
+   5. FORM INPUTS & BUTTONS
+   ========================================= */
 .t-Button {
     background: linear-gradient(135deg, rgba(47, 129, 247, 0.1) 0%, rgba(188, 140, 255, 0.1) 100%) !important;
     border: 1px solid var(--glass-border) !important;
     color: var(--primary-glow) !important;
     border-radius: 8px !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease !important;
 }
 
-.t-Button--hot, .t-Button--primary {
+.t-Button--hot,
+.t-Button--primary {
     background: linear-gradient(135deg, #2f81f7 0%, #a371f7 100%) !important;
     color: white !important;
-    box-shadow: 0 0 15px rgba(47, 129, 247, 0.4);
     border: none !important;
 }
 
-.t-Button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(88, 166, 255, 0.6);
-}
-
-/* Inputs */
-.apex-item-text, .apex-item-select, .apex-item-textarea {
-    background-color: rgba(0,0,0,0.3) !important;
+.apex-item-text,
+.apex-item-select,
+.apex-item-textarea {
+    background-color: rgba(0, 0, 0, 0.3) !important;
     border: 1px solid var(--glass-border) !important;
     color: white !important;
-    border-radius: 8px !important;
 }
 
-.apex-item-text:focus {
-    border-color: var(--primary-glow) !important;
-    box-shadow: 0 0 10px rgba(88, 166, 255, 0.2) !important;
-}
-
-/* Interactive Reports */
-.a-IRR-header {
-    background-color: transparent !important;
-    border-bottom: 1px solid var(--glass-border) !important;
-}
-
-.a-IRR-table tr td {
-    color: var(--text-main) !important;
-    background-color: transparent !important;
-    border-color: var(--glass-border) !important;
-}
-
-.a-IRR-table tr:hover td {
-    background-color: rgba(255,255,255,0.05) !important;
-}
-
-/* Navbar */
-.t-Header-branding, .t-Header-navBar {
-    background: rgba(13, 17, 23, 0.8) !important;
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--glass-border);
-}
-
-/* Animation Classes (used by JS) */
+/* =========================================
+   6. ANIMATIONS
+   ========================================= */
+/* Default to visible so no blank screen if JS fails */
 .fade-in-up {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Only hide if this class is added (can be added by JS) */
+.fade-in-up.hidden-start {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .fade-in-up.visible {

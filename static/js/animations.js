@@ -1,6 +1,6 @@
 // Animations for Event Management Portal
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     console.log("Modern Theme Animations Loaded 🚀");
 
     // 1. Add fade-in classes to common APEX regions
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
+
             // Simple spotlight effect via CSS var, assumes CSS handles it or just simple logging for now
             // card.style.setProperty('--mouse-x', `${x}px`);
             // card.style.setProperty('--mouse-y', `${y}px`);
