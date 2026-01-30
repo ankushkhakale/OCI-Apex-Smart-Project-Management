@@ -1,25 +1,36 @@
-# Starter Online Shopping App with Oracle APEX
+# 🎉 Event Management Portal (Oracle APEX)
 
-## Overview
-This project is based on the Oracle LiveLabs workshop where I built a shopping cart application using Oracle APEX. The app demonstrates how low-code development can quickly deliver a functional e-commerce solution.
+A web-based portal built with Oracle APEX to manage student/community events.  
+Features include participant registration, schedule management, certificate generation, and REST API-based notifications.
 
-## Features
-- Admin pages to manage products, customers, and stores
-- Customer pages to browse products and add to cart
-- Checkout workflow for placing orders
-- Interactive reports and forms built with APEX low-code features
+## 🚀 Features
+- Register participants with unique IDs
+- Manage event schedules with calendar view
+- Generate dynamic PDF certificates
+- Send email/SMS notifications via REST APIs
+- Analytics dashboard for attendance & feedback
 
-## How to Run
-1. Import the SQL scripts into Oracle APEX SQL Workshop.
-2. Import the APEX app export file into your workspace.
-3. Run the app to explore admin and customer features.
+## 🛠️ Tech Stack
+- Oracle APEX
+- PL/SQL
+- RESTful Web Services (Twilio/SendGrid)
+- SQL Workshop for schema setup
 
-## Screenshots
-![Admin Dashboard](docs/admin-dashboard.png)
-![Shopping Cart](docs/shopping-cart.png)
-![Checkout Page](docs/checkout.png)
+## 📂 Repo Structure
+- `sql/` → Database schema, seed data, and PL/SQL packages
+- `docs/` → Setup instructions and documentation
+- `apex_app/` → (Optional) Exported APEX app files
+- `api/` → (Optional) REST API definitions
 
-## Learnings
-- How to design a shopping cart schema
-- How to use APEX wizards to generate apps
-- How to customize pages with low-code components
+## ⚡ Setup Instructions
+**Check out [docs/SETUP_INSTRUCTIONS.md](docs/SETUP_INSTRUCTIONS.md) for a detailed step-by-step guide.**
+
+Quick Summary:
+1.  Run `sql/schema.sql` in APEX SQL Workshop.
+2.  Run `sql/pkg_event_manager.sql` to install backend logic.
+3.  Run `sql/seed_data.sql` to load sample data.
+4.  Create a new application in App Builder based on the tables.
+4. Launch the app in Oracle APEX workspace
+
+## 📜 License
+MIT License
